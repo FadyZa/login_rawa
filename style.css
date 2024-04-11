@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    text-transform: capitalize;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+
+.login-left,
+.login-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-basis: 50%;
+}
+
+/* login-left */
+.form-wrapper {
+    max-width: 364px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.form-subtitle {
+    color: #525252;
+    margin-bottom: 10px;
+}
+
+.username,
+.password {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input:not(input[type="submit"]) {
+    width: 100%;
+    background-color: #F0EDFFCC;
+    border-radius: 16px;
+    padding: 14px 14px 14px 50px;
+}
+
+label {
+    position: absolute;
+    left: 50px;
+    top: 14px;
+    color: #1C1C1C;
+    font-size: 12px;
+    transition: 0.3s linear;
+}
+
+/* Do the effect if user focus on input or typed into input */
+input:not(input[type="submit"]):focus+label,
+input:not(:placeholder-shown)+label {
+    transform: translate(-14px, -14px) scale(0.8);
+}
+
+
+.username::before {
+    content: '\f007';
+    font: var(--fa-font-regular);
+
+}
+
+.password::before {
+    content: '\f023';
+    font: var(--fa-font-solid);
+
+}
+
+.username::before,
+.password::before {
+    color: #1C1C1C;
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    left: 20px;
+    top: 25px;
+    transform: translateY(-50%);
+}
+
+input[type='submit'] {
+    background: linear-gradient(99.78deg, #9181F4 -5.85%, #5038ED 109.55%);
+    padding: 14px 22px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 21px 0px #00000029;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+input[type='submit']:hover {
+    transform: scale(1.1);
+}
+
+.other {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.other::before {
+    left: 101%;
+}
+
+.other::after {
+    right: 101%;
+}
+
+.other::before,
+.other::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 1px;
+    background-color: #F0EDFF;
+}
+
+
+.login-option {
+    width: 100%;
+    border: 1px solid #F0EDFF;
+    padding: 11px 0;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.login-option img {
+    width: 30px;
+    height: 30px;
+}
+
+/* --------------------------log-in right-------------------------- */
+.login-right {
+    background: linear-gradient(217.64deg, #9181F4 -5.84%, #5038ED 106.73%);
+}
+
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px;
+}
+
+/* make background image as a pseudo-element to maintain section's color  */
+.banner-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg.png');
+    opacity: 0.6;
+}
+
+.banner {
+    position: relative;
+    z-index: 1000;
+    background: #FFFFFF36;
+    border: 1px solid #FFFFFF85;
+    width: 412px;
+    height: 512px;
+    padding: 15px;
+    border-radius: 46px;
+}
+
+.banner .banner-text {
+    max-width: 225px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    line-height: -5px;
+}
+
+.banner .banner-img {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    right: -35px;
+}
+
+.thunder-container {
+    position: absolute;
+    left: -40px;
+    top: 70%;
+    background-color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thunder-container img {
+    width: 55%;
+}
+
+/* -------------------------- responsive design-------------------------- */
+@media only screen and (max-width: 992px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .login-left,
+    .login-right {
+        flex-basis: 100%;
+    }
+
+    .login-left {
+        order: 2;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .banner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner .banner-img {
+        width: 65%;
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+    }
+}
